@@ -5,6 +5,8 @@ class CreaturesController < ApplicationController
   end
 
   def new
+    @creature = Creature.new
+    render :new
   end
 
   # create a new creature in the database
@@ -17,10 +19,16 @@ class CreaturesController < ApplicationController
 
     # if creature saves, redirect to route that displays all creatures
     if creature.save
-      redirect_to creatures_path
+      redirect_to creature_path(creature)
       # redirect_to creatures_path is equivalent to:
       # redirect_to "/creatures"
     end
+  end
+
+  def show
+    creature_id = params[:id]
+    @creature = Creature.find(creature_id)
+    render :show
   end
 
 end
