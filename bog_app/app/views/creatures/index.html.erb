@@ -3,7 +3,7 @@
   <% @creatures.each do |creature| %>
     <li>
       <p>
-      <strong>Name:</strong> <%= link_to creature.name %><br />
+      <strong>Name:</strong> <%= link_to creature.name, creature_path(creature.id) %><br />
       <strong>Desc:</strong> <%= creature.description %>
       </p>
     </li>
