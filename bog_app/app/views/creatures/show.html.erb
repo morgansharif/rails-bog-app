@@ -2,3 +2,4 @@
 <p><%=  @creature.description %></p>
 <%= link_to "Back", creatures_path %><br />
 <%= link_to "Edit", edit_creature_path %>
+<%= link_to "delete", @creature, method: :delete %>
