@@ -2,7 +2,7 @@
 <ul>
   <% @creatures.each do |creature| %>
     <li>
-      <strong>Name: </strong><%= link_to creature.name, "creatures/#{creature.id}" %><br />
+      <strong>Name: </strong><%= link_to creature.name, creature_path(creature) %><br />
       <strong>Desc: </strong><%= creature.description %>
     </li>
   <% end %>
