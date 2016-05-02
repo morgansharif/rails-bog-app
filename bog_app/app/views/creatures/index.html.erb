@@ -1,7 +1,8 @@
+<%= link_to "Create New Creature", new_creature_path %>
 <ul>
   <% @creatures.each do |creature| %>
     <li>
-      <strong>Name: </strong><%= creature.name %><br />
+      <strong>Name: </strong><%= link_to creature.name, "creatures/#{creature.id}" %><br />
       <strong>Desc: </strong><%= creature.description %>
     </li>
   <% end %>
