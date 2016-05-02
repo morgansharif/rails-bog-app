@@ -13,5 +13,8 @@ class CreaturesController < ApplicationController
       redirect_to creatures_path
     end
   end
+  def show
+    @creature = Creature.find(params[:id])
+  end
 
 end
