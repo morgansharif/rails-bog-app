@@ -41,4 +41,13 @@ class CreaturesController < ApplicationController
     redirect_to creature_path(@creature)
   end
 
+  def destroy
+    creature = Creature.find(params[:id])
+    if creature.delete
+      redirect_to creatures_path
+      # redirect_to creatures_path is equivalent to:
+      # redirect_to "/creatures"
+    end
+  end
+
 end
